@@ -5,11 +5,14 @@ name = "pypi"
 
 [packages]
 pyside6 = "*"
+pylint = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-mock = "*"
 pytest-qt = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.10"
