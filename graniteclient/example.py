@@ -8,5 +8,10 @@ class Example:
 
 
 class Something:
-    pass
+    def __init__(self, factor=2):
+        self._factor = factor
+        
+    def double(self, number: int):
+        return number*self._factor
+
 
