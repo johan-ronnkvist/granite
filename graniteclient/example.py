@@ -4,4 +4,9 @@ class Example:
 
     @property
     def number(self):
-        return 
+        return self._num
+
+
+class Something:
+    pass
+
