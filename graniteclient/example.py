@@ -4,4 +4,14 @@ class Example:
 
     @property
     def number(self):
-        return 
+        return self._num
+
+
+class Something:
+    def __init__(self, factor=2):
+        self._factor = factor
+
+    def double(self, number: int):
+        return number*self._factor
+
+
