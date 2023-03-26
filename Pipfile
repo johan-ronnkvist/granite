@@ -10,7 +10,6 @@ pylint = "*"
 [dev-packages]
 pytest = "*"
 pytest-mock = "*"
-pytest-qt = "*"
 coverage = "*"
 pytest-cov = "*"
 
