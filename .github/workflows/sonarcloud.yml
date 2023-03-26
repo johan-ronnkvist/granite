@@ -30,6 +30,7 @@ jobs:
       run: pipenv run pytest --cov=graniteclient --cov-report=xml
 
     - name: Analyze with SonarCloud
+      if: matrix.os == 'ubuntu-latest'
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.SONAR_ACCESS_TO_GITHUB }}
