@@ -26,6 +26,7 @@ jobs:
       run: |
         pip install pipenv
         pipenv install --dev --ignore-pipfile
+        pipenv shell
 
     - name: Test with pytest
       run: pytest --cov=graniteclient --cov-report=xml
