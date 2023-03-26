@@ -11,7 +11,8 @@ class Something:
     def __init__(self, factor=2):
         self._factor = factor
 
-    def double(self, number: int):
+    def double(self, number: int): # Commented out code
+        # return number*self._factor
         return number*self._factor
 
 
