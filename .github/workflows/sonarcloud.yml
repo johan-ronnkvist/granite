@@ -46,9 +46,5 @@ jobs:
             -Dsonar.test.inclusions=**/*_test.py,**/*_spec.py
             -Dsonar.python.coverage.reportPaths=coverage.xml
 
-      - name: Wait for Quality Gate
-        uses: SonarSource/wait-for-quality-gate-action@v1
-        with:
-          organization: johan-ronnkvist
-          project: johan-ronnkvist_granite-client
-          token: ${{ secrets.SONAR_UPLOAD_DATA_TOKEN }}
+      - name: SonarQube Quality Gate Report
+        uses: phwt/sonarqube-quality-gate-action@v1.3.2
