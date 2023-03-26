@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  Analyze:
 
     runs-on: ubuntu-latest
 
@@ -29,3 +29,17 @@ jobs:
 
     - name: Test with pytest
       run: pipenv run pytest --cov=graniteclient --cov-report=xml
+
+    - name: Analyze with SonarCloud
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.SONAR_ACCESS_TO_GITHUB }}
+        SONAR_TOKEN: ${{ secrets.SONAR_UPLOAD_DATA_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=johan-ronnkvist_granite-client
+          -Dsonar.organization=johan-ronnkvist
+          -Dsonar.sources=graniteclient
+          -Dsonar.tests=tests
+          -Dsonar.test.inclusions=**/*_test.py,**/*_spec.py
+          -Dsonar.python.coverage.reportPaths=coverage.xml
