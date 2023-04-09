@@ -1,1 +1,1 @@
-# granite-client
+# granite
